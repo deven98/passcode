@@ -1,8 +1,8 @@
 name: passcode
 description: A Flutter widget for entering a passcode.
-version: 0.0.1
-author:
-homepage:
+version: 0.1.0
+author: Deven Joshi <deven9852@gmail.com>
+homepage: https://github.com/deven98/passcode
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

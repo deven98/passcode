@@ -1,6 +1,6 @@
 name: passcode
 description: A Flutter widget for entering a passcode. The widget has cutomisable colors, borders and character lengths.
-version: 0.1.1
+version: 0.1.2
 author: Deven Joshi <deven9852@gmail.com>
 homepage: https://github.com/deven98/passcode
 

@@ -49,11 +49,10 @@ class _PasscodeTextFieldState extends State<PasscodeTextField> {
 
   @override
   Widget build(BuildContext context) {
-
     double widthSize = 1.0;
     double heightSize = 1.0;
 
-    if(widget.size != null) {
+    if (widget.size != null) {
       widthSize = widget.size.width / widget.totalCharacters;
       heightSize = widget.size.height;
     }
@@ -67,7 +66,7 @@ class _PasscodeTextFieldState extends State<PasscodeTextField> {
             widget.size != null
                 ? (widthSize > heightSize ? heightSize : widthSize)
                 : 50.0,
-                (blockText, blockPosition) {
+            (blockText, blockPosition) {
               if (blockText == "") {
                 if (blockPosition > 0) {
                   FocusScope.of(context)
@@ -77,7 +76,7 @@ class _PasscodeTextFieldState extends State<PasscodeTextField> {
                 FocusScope.of(context)
                     .requestFocus(focusNodes[blockPosition + 1]);
               }
-              if(blockText == "") {
+              if (blockText == "") {
                 passcode[blockPosition] = null;
               } else {
                 passcode[blockPosition] = blockText;
@@ -124,17 +123,17 @@ class TextFieldBox extends StatefulWidget {
   final bool obscureText;
 
   TextFieldBox(
-      this.size,
-      this.onBlockTextChanged,
-      this.passcodeType,
-      this.boxPosition,
-      this.focusNode,
-      this.backgroundColor,
-      this.borderColor,
-      this.totalCharacters,
-      this.textColor,
-      this.obscureText,
-      );
+    this.size,
+    this.onBlockTextChanged,
+    this.passcodeType,
+    this.boxPosition,
+    this.focusNode,
+    this.backgroundColor,
+    this.borderColor,
+    this.totalCharacters,
+    this.textColor,
+    this.obscureText,
+  );
 
   @override
   _TextFieldBoxState createState() => _TextFieldBoxState();
@@ -169,10 +168,13 @@ class _TextFieldBoxState extends State<TextFieldBox> {
               children: <Widget>[
                 Expanded(
                   child: TextField(
+                    textAlign: TextAlign.center,
                     controller: controller,
                     obscureText: widget.obscureText,
                     focusNode: widget.focusNode,
-                    style: TextStyle(color: widget.textColor ?? Colors.black, fontSize: widget.size * 0.4),
+                    style: TextStyle(
+                        color: widget.textColor ?? Colors.black,
+                        fontSize: widget.size * 0.4),
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: '',
